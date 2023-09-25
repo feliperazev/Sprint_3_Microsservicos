@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  servico_colaboradores:
+    image: servico_colaboradores:latest
+    build: ./servico_colaboradores
+    container_name: servico_colaboradores
+    volumes:
+      - ./servico_colaboradores:/app
+    ports:
+      - 5001:5001
+  
+  servico_controle_atividades:
+    image: servico_controle_atividades:latest
+    build: ./servico_controle_atividades
+    container_name: servico_controle_atividades
+    volumes:
+      - ./servico_controle_atividades:/app
+    ports:
+      - 5000:5000
